@@ -3,36 +3,46 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Grid, Paper, Box, Link } from '@mui/material';
 import Footer from '../components/Footer';
+import HomeIcon from '@mui/icons-material/Home';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  
+  const navigate = useNavigate();
+
+  const handleLoginButtonClick = () => {
+    navigate('/login');
+  };
+
+  const handleHomeButtonClick = () => {
+    navigate('/');
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ width: '100%' }}>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+    <AppBar position="fixed" sx={{ width: '100%' }}>
+      <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <HomeIcon onClick={handleHomeButtonClick} style={{ cursor: 'pointer', marginRight: '8px' }} />
           <Typography variant="h6">Reliance Hospital</Typography>
+        </Box>
           <Box>
             <Link href="/" color="inherit" style={{ margin: '0 8px' }}>
               Home
             </Link>
-            <Link href="#" color="inherit" style={{ margin: '0 8px' }}>
+            <Link href="/about" color="inherit" style={{ margin: '0 8px' }}>
               About
             </Link>
-            <Link href="#" color="inherit" style={{ margin: '0 8px' }}>
-              Services
-            </Link>
-            <Link href="#" color="inherit" style={{ margin: '0 8px' }}>
-              Departments
-            </Link>
-            <Link href="#" color="inherit" style={{ margin: '0 8px' }}>
-              Doctors
-            </Link>
-            <Link href="#" color="inherit" style={{ margin: '0 8px' }}>
-              Contact
+            <Link href="/claim" color="inherit" style={{ margin: '0 8px' }}>
+              Patient
             </Link>            
-            <Button variant="outlined" color="inherit" component={Link} to="/login" style={{ marginLeft: '16px' }}>
+            <Link href="/contact" color="inherit" style={{ margin: '0 8px' }}>
+              Contact
+            </Link> 
+            <Button  variant="outlined"  color="inherit" onClick={handleLoginButtonClick}  style={{ marginLeft: '16px' }}  >
               Login
-            </Button>
-          </Box>
+            </Button>                    
+            </Box>
         </Toolbar>
       </AppBar>
 

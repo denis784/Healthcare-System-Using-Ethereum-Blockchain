@@ -5,6 +5,11 @@ import Container from '@material-ui/core/Container';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Register from './pages/Register';
+import ForgotPassword from './pages/Forgotpassword';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import ClaimForm from './pages/Claimform';
 
 function App() {
   return (
@@ -14,6 +19,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/register' element={<Register/>} />
+          <Route path='/forgotpassword' element={<ForgotPassword/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/claim' element={<ClaimForm/>} />
+          <Route path='/contact' element={<Contact/>} />
           {/* Add more routes as needed */}
         </Routes>
       </Container>

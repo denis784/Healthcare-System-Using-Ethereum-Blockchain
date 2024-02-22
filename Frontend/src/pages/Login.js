@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Layout from '../components/Layout';
 import {
   Container,
   CssBaseline,
@@ -24,6 +25,7 @@ const Login = () => {
   };
 
   return (
+    <Layout>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div
@@ -89,12 +91,12 @@ const Login = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link href="/forgotpassword" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/register" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
@@ -105,6 +107,7 @@ const Login = () => {
         {/* Add your footer or other content here */}
       </Box>
     </Container>
+    </Layout>
   );
 };
 
